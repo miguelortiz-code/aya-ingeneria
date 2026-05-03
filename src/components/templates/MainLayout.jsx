@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar } from '../organisms/Navbar'
 import { Footer } from '../organisms/Footer'
+import { FloatingButtons } from '../atoms/FloatingButtons'
 
 /**
  * Template: MainLayout
@@ -14,6 +15,7 @@ export function MainLayout({ children }) {
         {children}
       </main>
       <Footer />
+      <FloatingButtons />
     </div>
   )
 }
