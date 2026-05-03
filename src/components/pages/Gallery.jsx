@@ -7,7 +7,9 @@ import { GalleryGrid } from '../molecules/GalleryGrid'
 import { SectionTitle } from '../atoms/SectionTitle'
 import { galleryImages, galleryVideos } from '../../data/projects'
 
-const categories = ['Todas', 'Proyectos', 'Colectores', 'Termotanques', 'Instalaciones']
+const categories = ['Todas', 'Proyectos', 'Colectores', 'Termotanques', 'Instalaciones', 'Calderas']
+
+const PHOTOS_LIMIT = 6
 
 // ── Video Card ──────────────────────────────────────────────
 function VideoCard({ video, onPlay }) {
@@ -106,6 +108,7 @@ export default function Gallery() {
   const [filter, setFilter] = useState('Todas')
   const [activeVideo, setActiveVideo] = useState(null)
   const [tab, setTab] = useState('fotos') // 'fotos' | 'videos'
+  const [showAllPhotos, setShowAllPhotos] = useState(false)
 
   const filtered = filter === 'Todas' 
   ? galleryImages 
@@ -168,34 +171,49 @@ export default function Gallery() {
 
             {/* ── Fotos ── */}
             {tab === 'fotos' && (
-              <>
-                {/* Filter */}
-                <div className="flex flex-wrap gap-2 mb-8" role="tablist">
-                  {categories.map((cat) => (
-                    <button
-                      key={cat}
-                      role="tab"
-                      aria-selected={filter === cat}
-                      onClick={() => setFilter(cat)}
-                      className={`px-4 py-2 rounded-full font-body text-sm transition-all duration-200
-                        ${filter === cat
-                          ? 'bg-solar-500 text-navy-900 font-semibold shadow-solar'
-                          : 'bg-white/5 border border-white/10 text-white/60 hover:bg-white/10 hover:text-white'
-                        }`}
-                    >
-                      {cat}
-                      <span className="ml-1.5 text-xs opacity-60">
-                        ({cat === 'Todas'
-                          ? galleryImages.length
-                          : galleryImages.filter(i => i.categories.includes(cat)).length})
-                      </span>
-                    </button>
-                  ))}
-                </div>
+  <>
+    <div className="flex flex-wrap gap-2 mb-8" role="tablist">
+      {categories.map((cat) => (
+        <button
+          key={cat}
+          role="tab"
+          aria-selected={filter === cat}
+          onClick={() => { setFilter(cat); setShowAllPhotos(false) }}
+          className={`px-4 py-2 rounded-full font-body text-sm transition-all duration-200
+            ${filter === cat
+              ? 'bg-solar-500 text-navy-900 font-semibold shadow-solar'
+              : 'bg-white/5 border border-white/10 text-white/60 hover:bg-white/10 hover:text-white'
+            }`}
+        >
+          {cat}
+          <span className="ml-1.5 text-xs opacity-60">
+            ({cat === 'Todas'
+              ? galleryImages.length
+              : galleryImages.filter(i => i.categories.includes(cat)).length})
+          </span>
+        </button>
+      ))}
+    </div>
 
-                <GalleryGrid images={filtered} columns={3} />
-              </>
-            )}
+    <GalleryGrid
+      images={showAllPhotos ? filtered : filtered.slice(0, PHOTOS_LIMIT)}
+      columns={3}
+    />
+
+    {filtered.length > PHOTOS_LIMIT && (
+      <div className="mt-10 text-center">
+        <button
+          onClick={() => setShowAllPhotos(v => !v)}
+          className="btn-outline"
+        >
+          {showAllPhotos
+            ? `Ver menos`
+            : `Ver más imágenes (${filtered.length - PHOTOS_LIMIT} restantes)`}
+        </button>
+      </div>
+    )}
+  </>
+)}
 
             {/* ── Videos ── */}
             {tab === 'videos' && (
