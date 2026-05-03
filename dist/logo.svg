@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <!-- Solar panel -->
+  <rect x="5" y="10" width="60" height="42" rx="3" fill="#1E3A5F" stroke="#0EA5E9" stroke-width="1.5"/>
+  <line x1="25" y1="10" x2="25" y2="52" stroke="#0EA5E9" stroke-width="1" opacity="0.6"/>
+  <line x1="45" y1="10" x2="45" y2="52" stroke="#0EA5E9" stroke-width="1" opacity="0.6"/>
+  <line x1="5" y1="24" x2="65" y2="24" stroke="#0EA5E9" stroke-width="1" opacity="0.6"/>
+  <line x1="5" y1="38" x2="65" y2="38" stroke="#0EA5E9" stroke-width="1" opacity="0.6"/>
+  <!-- Sun -->
+  <circle cx="58" cy="14" r="9" fill="#F59E0B"/>
+  <circle cx="58" cy="14" r="6" fill="#FCD34D"/>
+  <!-- Text AYA -->
+  <text x="78" y="36" font-family="Arial Black, sans-serif" font-weight="900" font-size="26" fill="white" letter-spacing="2">AYA</text>
+  <!-- Text INGENIERIA -->
+  <text x="78" y="54" font-family="Arial, sans-serif" font-weight="700" font-size="13" fill="#94A3B8" letter-spacing="1">INGENIERÍA</text>
+  <!-- S.A.S in green -->
+  <text x="168" y="54" font-family="Arial, sans-serif" font-weight="700" font-size="13" fill="#22C55E">S.A.S</text>
+</svg>
