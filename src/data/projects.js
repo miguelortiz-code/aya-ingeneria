@@ -10,7 +10,31 @@ import proyect7 from '../../public/proyects/image7.webp';
 //-- Imagenes
 import image1 from '../../public/images/image1.webp';
 import image2 from '../../public/images/image2.webp';
-import image3 from '../../public/images/image3.webp';
+import image3 from '../../public/images/image3.webp'
+import image4 from '../../public/images/image4.webp';
+import image5 from '../../public/images/image5.webp';
+import image6 from '../../public/images/image6.webp';
+import image7 from '../../public/images/image7.webp';
+import image8 from '../../public/images/image8.webp';
+import image9 from '../../public/images/image9.webp';
+import image10 from '../../public/images/image10.webp';
+import image11 from '../../public/images/image11.webp';
+import image12 from '../../public/images/image12.webp';
+import image13 from '../../public/images/image13.webp';
+import image14 from '../../public/images/image14.webp';
+import image15 from '../../public/images/image15.webp';
+import image16 from '../../public/images/image16.webp';
+import image17 from '../../public/images/image17.webp';
+import image18 from '../../public/images/image18.webp';
+import image19 from '../../public/images/image19.webp';
+import image20 from '../../public/images/image20.webp';
+import image21 from '../../public/images/image21.webp';
+import image22 from '../../public/images/image22.webp';
+import image23 from '../../public/images/image23.webp';
+import image24 from '../../public/images/image24.webp';
+import image25 from '../../public/images/image25.webp';
+
+
 
 
 
@@ -151,6 +175,29 @@ export const galleryImages = [
   { id: 8, src: image1, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
   { id: 9, src: image2, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
   { id: 10, src: image3, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
+  { id: 11, src: image4, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
+  { id: 12, src: image5, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
+  { id: 13, src: image6, alt: 'Termotanque acero inoxidable', categories: ['Instalaciones'] },
+  { id: 14, src: image7, alt: 'Termotanque acero inoxidable', categories: ['Instalaciones'] },
+  { id: 15, src: image8, alt: 'Paneles solares', categories: ['Instalaciones'] },
+  { id: 16, src: image9, alt: 'Caldera', categories: ['Termotanques'] },
+  { id: 17, src: image10, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
+  { id: 18, src: image11, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
+  { id: 19, src: image12, alt: 'Termotanque acero inoxidable', categories: ['Instalaciones'] },
+  { id: 20, src: image13, alt: 'Termotanque acero inoxidable', categories: ['Instalaciones'] },
+  { id: 21, src: image14, alt: 'Termotanque acero inoxidable', categories: ['Instalaciones'] },
+  { id: 22, src: image15, alt: 'Termotanque acero inoxidable', categories: ['Instalaciones'] },
+  { id: 23, src: image16, alt: 'Termotanque acero inoxidable', categories: ['Colectores'] },
+  { id: 24, src: image17, alt: 'Termotanque acero inoxidable', categories: ['Instalaciones'] },
+  { id: 25, src: image18, alt: 'Termotanque acero inoxidable', categories: ['Instalaciones'] },
+  { id: 26, src: image18, alt: 'Termotanque acero inoxidable', categories: ['Calderas'] },
+  { id: 27, src: image19, alt: 'Termotanque acero inoxidable', categories: ['Instalaciones'] },
+  { id: 28, src: image20, alt: 'Termotanque acero inoxidable', categories: ['Proyectos'] },
+  { id: 29, src: image21, alt: 'Termotanque acero inoxidable', categories: ['Proyectos'] },
+  { id: 30, src: image22, alt: 'Termotanque acero inoxidable', categories: ['Proyectos', 'Calderas'] },
+  { id: 31, src: image23, alt: 'Termotanque acero inoxidable', categories: ['Calderas'] },
+  { id: 32, src: image24, alt: 'Termotanque acero inoxidable', categories: ['Calderas'] },
+  { id: 33, src: image25, alt: 'Termotanque acero inoxidable', categories: ['Calderas'] },
 
   // ── Fotos de prueba (Unsplash) para proyectos sin imagen real ──
   // { id: 8, src: 'https://images.unsplash.com/photo-1584276433295-4c31a0a199c5?w=800&q=75', alt: 'Clínica Américas del Sur - Termotanques 20.000L', category: 'Proyectos', project: 'Clínica Américas del Sur' },
@@ -168,31 +215,31 @@ export const galleryImages = [
 ]
 
 export const galleryVideos = [
-  {
+   {
     id: 'v1',
     type: 'local',
-    videoId: '/videos/instalacion-solar.mp4', // ← reemplaza con tu YouTube video ID real
-    thumbnail: 'https://img.youtube.com/vi/qS8hL7Yb7dU/hqdefault.jpg',
+    src: '/videos/video1.mp4',
+    thumbnail: image3, 
     title: 'Instalación sistema solar térmico - AYA Ingeniería',
     description: 'Proceso de instalación de colectores solares tipo Heat Pipe en Bogotá.',
-    duration: '3:24',
+    duration: '0:50',
   },
-  {
-    id: 'v2',
-    type: 'youtube',
-    videoId: 'oVW4qn9DTPM', // ← reemplaza con tu YouTube video ID real
-    thumbnail: 'https://img.youtube.com/vi/oVW4qn9DTPM/hqdefault.jpg',
-    title: 'Fabricación de termotanques en acero inoxidable',
-    description: 'Así fabricamos nuestros termotanques de alta capacidad en nuestras instalaciones.',
-    duration: '4:10',
-  },
-  {
-    id: 'v3',
-    type: 'youtube',
-    videoId: 'h3mZ4KxFAWY', // ← reemplaza con tu YouTube video ID real
-    thumbnail: 'https://img.youtube.com/vi/h3mZ4KxFAWY/hqdefault.jpg',
-    title: 'Climatización de piscina con energía solar',
-    description: 'Proyecto de climatización de piscina usando colectores solares en Cundinamarca.',
-    duration: '2:55',
-  },
+  // {
+  //   id: 'v2',
+  //   type: 'youtube',
+  //   videoId: 'oVW4qn9DTPM', // ← reemplaza con tu YouTube video ID real
+  //   thumbnail: 'https://img.youtube.com/vi/oVW4qn9DTPM/hqdefault.jpg',
+  //   title: 'Fabricación de termotanques en acero inoxidable',
+  //   description: 'Así fabricamos nuestros termotanques de alta capacidad en nuestras instalaciones.',
+  //   duration: '4:10',
+  // },
+  // {
+  //   id: 'v3',
+  //   type: 'youtube',
+  //   videoId: 'h3mZ4KxFAWY', // ← reemplaza con tu YouTube video ID real
+  //   thumbnail: 'https://img.youtube.com/vi/h3mZ4KxFAWY/hqdefault.jpg',
+  //   title: 'Climatización de piscina con energía solar',
+  //   description: 'Proyecto de climatización de piscina usando colectores solares en Cundinamarca.',
+  //   duration: '2:55',
+  // },
 ]
