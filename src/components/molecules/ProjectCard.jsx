@@ -61,6 +61,13 @@ export function ProjectCard({ slug, name, location, category, description, tags,
             </Badge>
           ))}
         </div>
+        {/* Botón ver detalle */}
+        <div className="mt-4 pt-4 border-t border-white/10">
+          <span className="inline-flex items-center gap-1.5 text-solar-400 font-heading font-semibold text-sm group-hover:gap-2.5 transition-all duration-200">
+            Ver detalle
+            <ArrowRight size={14} />
+          </span>
+        </div>
       </div>
     </Link>
   )

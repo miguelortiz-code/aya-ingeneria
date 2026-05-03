@@ -1,21 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
 import { SectionTitle } from '../atoms/SectionTitle'
 import { ProjectCard } from '../molecules/ProjectCard'
-import { Button } from '../atoms/Button'
 import { projects } from '../../data/projects'
 
-const categories = ['Todos', 'Sector Salud', 'Sector Hotelero', 'Residencial', 'Sector Educativo', 'Ecoturismo', 'Comunidad Religiosa', 'Sector Rural', 'Recreativo']
-
-/**
- * Organism: Projects
- * Filterable grid of completed projects
- */
 export function Projects() {
-  const [filter, setFilter] = useState('Todos')
-  const [showAll, setShowAll] = useState(false)
-
-  const filtered = filter === 'Todos' ? projects : projects.filter(p => p.category === filter)
-  const visible = showAll ? filtered : filtered.slice(0, 6)
+  // Solo los primeros 3 en el home
+  const featured = projects.slice(0, 3)
 
   return (
     <section
@@ -23,7 +15,6 @@ export function Projects() {
       className="section-padding relative overflow-hidden"
       aria-labelledby="projects-heading"
     >
-      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-navy-700/20 to-navy-900/40 pointer-events-none" />
 
       <div className="container-custom relative z-10">
@@ -35,43 +26,22 @@ export function Projects() {
           className="mb-12"
         />
 
-        {/* Filter tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12" role="tablist" aria-label="Filtro de proyectos">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              role="tab"
-              aria-selected={filter === cat}
-              onClick={() => { setFilter(cat); setShowAll(false) }}
-              className={`px-4 py-2 rounded-full font-body text-sm transition-all duration-200
-                ${filter === cat
-                  ? 'bg-solar-500 text-navy-900 font-semibold shadow-solar'
-                  : 'bg-white/5 border border-white/10 text-white/60 hover:bg-white/10 hover:text-white'
-                }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Projects grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {visible.map((project, i) => (
+          {featured.map((project, i) => (
             <ProjectCard key={project.id} {...project} index={i} />
           ))}
         </div>
 
-        {/* Show more */}
-        {filtered.length > 6 && (
-          <div className="mt-10 text-center">
-            <Button
-              variant="outline"
-              onClick={() => setShowAll(!showAll)}
-            >
-              {showAll ? 'Ver menos' : `Ver todos (${filtered.length})`}
-            </Button>
-          </div>
-        )}
+        {/* Ver todos */}
+        <div className="mt-12 text-center">
+          <Link
+            to="/proyectos"
+            className="inline-flex items-center gap-2 btn-primary"
+          >
+            Ver todos los proyectos
+            <ArrowRight size={18} />
+          </Link>
+        </div>
       </div>
     </section>
   )
