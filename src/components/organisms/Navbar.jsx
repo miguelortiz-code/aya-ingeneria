@@ -22,12 +22,30 @@ export function Navbar() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
+  const [theme, setTheme] = useState('dark')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+
+  useEffect(() => {
+  const saved = localStorage.getItem('aya-theme')
+  if (saved) {
+    setTheme(saved)
+    document.documentElement.classList.toggle('light', saved === 'light')
+  }
+}, [])
+
+const toggle = () => {
+  const next = theme === 'dark' ? 'light' : 'dark'
+  setTheme(next)
+  document.documentElement.classList.toggle('light', next === 'light')
+  localStorage.setItem('aya-theme', next)
+}
+
 
   // Close mobile menu on route change
   useEffect(() => { setOpen(false) }, [location.pathname])
@@ -134,6 +152,14 @@ export function Navbar() {
             >
               Cotizar Ahora
             </Button>
+
+            <button
+                onClick={toggle}
+                aria-label="Cambiar tema"
+                className="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors duration-200 text-lg"
+            >
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
           </div>
 
           {/* Mobile hamburger */}
