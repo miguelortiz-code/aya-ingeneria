@@ -65,6 +65,13 @@ function ProjectListCard({ project, index }) {
             <Badge key={tag} variant="solar" className="text-[10px] px-2 py-0.5">{tag}</Badge>
           ))}
         </div>
+
+        <div className="mt-4 pt-4 border-t border-white/10">
+          <span className="inline-flex items-center gap-1.5 text-solar-400 font-heading font-semibold text-sm group-hover:gap-2.5 transition-all duration-200">
+          Ver detalle
+          <ArrowRight size={14} />
+          </span>
+        </div>
       </div>
     </Link>
   )

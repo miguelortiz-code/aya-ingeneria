@@ -114,14 +114,6 @@ export function Hero() {
             Solicitar Cotización
             <ArrowRight size={20} />
           </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={() => scrollTo('proyectos')}
-          >
-            Ver Proyectos
-            <ChevronRight size={20} />
-          </Button>
         </div>
 
         {/* Trust indicators */}

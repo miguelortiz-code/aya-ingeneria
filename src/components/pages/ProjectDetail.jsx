@@ -162,17 +162,34 @@ export default function ProjectDetail() {
                     <Link
                       key={p.id}
                       to={`/proyectos/${p.slug}`}
-                      className="glass-card solar-border hover:border-solar-500/50 p-5 group transition-all duration-300 hover:-translate-y-1"
+                      className="glass-card solar-border hover:border-solar-500/50 overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover block"
                     >
-                      <div className={`h-24 rounded-xl bg-gradient-to-br ${p.color} flex items-center justify-center mb-4 text-4xl group-hover:scale-105 transition-transform duration-300`}>
-                        {p.icon}
+                      {/* Thumbnail con imagen real */}
+                      <div className="relative h-40 overflow-hidden bg-navy-700">
+                        {p.thumbnail ? (
+                          <img
+                            src={p.thumbnail}
+                            alt={`${p.name} - AYA Ingeniería`}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className={`w-full h-full bg-gradient-to-br ${p.color} flex items-center justify-center`}>
+                            <span className="text-4xl">{p.icon}</span>
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/30 transition-all duration-300" />
                       </div>
-                      <h3 className="font-heading font-bold text-white text-sm mb-1 group-hover:text-solar-300 transition-colors duration-200">
-                        {p.name}
-                      </h3>
-                      <p className="font-body text-white/40 text-xs flex items-center gap-1">
-                        <MapPin size={10} /> {p.location}
-                      </p>
+
+                      {/* Info */}
+                      <div className="p-4">
+                        <h3 className="font-heading font-bold text-white text-sm mb-1 group-hover:text-solar-300 transition-colors duration-200">
+                          {p.name}
+                        </h3>
+                        <p className="font-body text-white/40 text-xs flex items-center gap-1">
+                          <MapPin size={10} /> {p.location}
+                        </p>
+                      </div>
                     </Link>
                   ))}
                 </div>

@@ -5,12 +5,12 @@ import { NavLink } from '../molecules/NavLink'
 import { Button } from '../atoms/Button'
 
 const navItems = [
-  { href: '/#inicio', label: 'Inicio', scroll: 'inicio' },
-  { href: '/#nosotros', label: 'Nosotros', scroll: 'nosotros' },
+  { href: '/#inicio',    label: 'Inicio',    scroll: 'inicio' },
+  { href: '/#nosotros',  label: 'Nosotros',  scroll: 'nosotros' },
   { href: '/#servicios', label: 'Servicios', scroll: 'servicios' },
-  { href: '/proyectos', label: 'Proyectos', route: true },
-  { href: '/galeria', label: 'Galería', route: true },
-  { href: '/#contacto', label: 'Contacto', scroll: 'contacto' },
+  { href: '/proyectos',  label: 'Proyectos', route: true },   // ← route:true, sin #
+  { href: '/galeria',    label: 'Galería',   route: true },   // ← route:true, sin #
+  { href: '/#contacto',  label: 'Contacto',  scroll: 'contacto' },
 ]
 
 /**
