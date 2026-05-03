@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #050D1A;
+    color: #F8FAFC;
+    overflow-x: hidden;
+  }
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-solar-500 to-solar-300 bg-clip-text text-transparent;
+  }
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl;
+  }
+  .solar-border {
+    @apply border border-solar-500/30;
+  }
+  .btn-primary {
+    @apply bg-solar-500 hover:bg-solar-400 text-navy-900 font-heading font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-solar hover:scale-105 active:scale-95 inline-flex items-center gap-2;
+  }
+  .btn-outline {
+    @apply border-2 border-solar-500 text-solar-500 hover:bg-solar-500 hover:text-navy-900 font-heading font-bold px-8 py-4 rounded-full transition-all duration-300 inline-flex items-center gap-2;
+  }
+}
+
+@layer utilities {
+  .text-shadow-solar {
+    text-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+  }
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+  .animate-delay-600 { animation-delay: 600ms; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #050D1A; }
+::-webkit-scrollbar-thumb { background: #F59E0B; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #FBB93F; }
+
+/* Solar grid background */
+.solar-grid-bg {
+  background-image: 
+    linear-gradient(rgba(245,158,11,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,158,11,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
