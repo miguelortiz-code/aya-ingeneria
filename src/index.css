@@ -3,18 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
   body {
     font-family: 'DM Sans', sans-serif;
     background-color: #050D1A;
     color: #F8FAFC;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
 }
 
 @layer components {
@@ -34,17 +31,21 @@
     @apply border border-solar-500/30;
   }
   .btn-primary {
-    @apply bg-solar-500 hover:bg-solar-400 text-navy-900 font-heading font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-solar hover:scale-105 active:scale-95 inline-flex items-center gap-2;
+    @apply bg-solar-500 hover:bg-solar-400 text-navy-900 font-heading font-bold 
+           px-8 py-4 rounded-full transition-all duration-300 
+           hover:shadow-solar hover:scale-105 active:scale-95 
+           inline-flex items-center gap-2 cursor-pointer;
   }
   .btn-outline {
-    @apply border-2 border-solar-500 text-solar-500 hover:bg-solar-500 hover:text-navy-900 font-heading font-bold px-8 py-4 rounded-full transition-all duration-300 inline-flex items-center gap-2;
+    @apply border-2 border-solar-500 text-solar-500 hover:bg-solar-500 
+           hover:text-navy-900 font-heading font-bold px-8 py-4 
+           rounded-full transition-all duration-300 
+           inline-flex items-center gap-2 cursor-pointer;
   }
 }
 
 @layer utilities {
-  .text-shadow-solar {
-    text-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
-  }
+  .text-shadow-solar { text-shadow: 0 0 30px rgba(245,158,11,0.5); }
   .animate-delay-100 { animation-delay: 100ms; }
   .animate-delay-200 { animation-delay: 200ms; }
   .animate-delay-300 { animation-delay: 300ms; }
@@ -53,46 +54,152 @@
   .animate-delay-600 { animation-delay: 600ms; }
 }
 
-/* Custom scrollbar */
+/* ── Scrollbar dark ── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #050D1A; }
 ::-webkit-scrollbar-thumb { background: #F59E0B; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #FBB93F; }
 
-/* Solar grid background */
+/* ── Solar grid dark ── */
 .solar-grid-bg {
-  background-image: 
+  background-image:
     linear-gradient(rgba(245,158,11,0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(245,158,11,0.05) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
+/* ════════════════════════════════════════
+   LIGHT MODE
+   ════════════════════════════════════════ */
 
+/* ── Base ── */
 .light body {
-  background-color: #F1F5F9;
+  background-color: #F0F6FF;
   color: #0F172A;
 }
-.light .glass-card {
-  background-color: rgba(255,255,255,0.85);
-  border-color: rgba(0,0,0,0.08);
+.light ::-webkit-scrollbar-track { background: #E2EAF4; }
+
+/* ── Solar grid light ── */
+.light .solar-grid-bg {
+  background-image:
+    linear-gradient(rgba(14,116,144,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,116,144,0.06) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
-.light .bg-navy-900,
-.light .bg-navy-800\/30,
-.light .bg-navy-800\/20 {
-  background-color: #F1F5F9 !important;
+
+/* ── Hero / Inicio ── */
+.light #inicio {
+  background: linear-gradient(135deg, #EFF6FF 0%, #F0F9FF 50%, #ECFDF5 100%) !important;
 }
+.light .bg-solar-gradient {
+  background: linear-gradient(135deg, #EFF6FF 0%, #F0F9FF 60%, #ECFDF5 100%) !important;
+}
+/* Orbs ambientales en hero */
+.light #inicio .bg-solar-500\/8,
+.light #inicio .bg-sky-500\/8,
+.light #inicio .bg-solar-600\/10 {
+  opacity: 0.4;
+}
+
+/* ── Navbar ── */
 .light header {
   background-color: rgba(255,255,255,0.95) !important;
-  border-color: rgba(0,0,0,0.08) !important;
+  border-color: rgba(14,116,144,0.12) !important;
+  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
 }
+.light header .text-white\/70 { color: #334155 !important; }
+.light header .text-white\/60 { color: #475569 !important; }
+
+/* ── Menú móvil ── */
+.light .bg-navy-900\/95  { background-color: rgba(255,255,255,0.97) !important; }
+.light .bg-navy-800\/95  { background-color: rgba(248,250,252,0.98) !important; }
+.light .bg-navy-900      { background-color: #F0F6FF !important; }
+
+/* ── Secciones ── */
+.light .bg-navy-800\/30  { background-color: #E8F0FB !important; }
+.light .bg-navy-800\/20  { background-color: #EEF4FC !important; }
+.light .bg-navy-700\/20  { background-color: #E2EDF8 !important; }
+.light .bg-navy-900\/40  { background-color: #EBF3FC !important; }
+
+/* ── Cards ── */
+.light .glass-card {
+  background-color: rgba(255,255,255,0.92) !important;
+  border-color: rgba(14,116,144,0.12) !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+}
+.light .glass-card:hover {
+  box-shadow: 0 8px 32px rgba(245,158,11,0.12) !important;
+}
+.light .solar-border {
+  border-color: rgba(245,158,11,0.25) !important;
+}
+
+/* ── Textos ── */
+.light .text-white       { color: #0F172A !important; }
+.light .text-white\/80   { color: #1E293B !important; }
+.light .text-white\/70   { color: #334155 !important; }
+.light .text-white\/65   { color: #3D5068 !important; }
+.light .text-white\/60   { color: #475569 !important; }
+.light .text-white\/55   { color: #526070 !important; }
+.light .text-white\/50   { color: #64748B !important; }
+.light .text-white\/45   { color: #7A8FA6 !important; }
+.light .text-white\/40   { color: #94A3B8 !important; }
+.light .text-white\/30   { color: #B0BFCF !important; }
+.light .text-white\/20   { color: #CBD5E1 !important; }
+
+/* ── Bordes ── */
+.light .border-white\/10 { border-color: rgba(0,0,0,0.07) !important; }
+.light .border-white\/15 { border-color: rgba(0,0,0,0.09) !important; }
+.light .border-white\/20 { border-color: rgba(0,0,0,0.10) !important; }
+
+/* ── Fondos de iconos y elementos ── */
+.light .bg-white\/5      { background-color: rgba(14,116,144,0.06) !important; }
+.light .bg-white\/10     { background-color: rgba(14,116,144,0.08) !important; }
+.light .bg-navy-700      { background-color: #D1DFF0 !important; }
+
+/* ── Inputs y formularios ── */
+.light input,
+.light textarea,
+.light select {
+  background-color: #F8FAFC !important;
+  border-color: rgba(0,0,0,0.10) !important;
+  color: #0F172A !important;
+}
+.light input::placeholder,
+.light textarea::placeholder { color: #94A3B8 !important; }
+.light input:focus,
+.light textarea:focus,
+.light select:focus { border-color: #F59E0B !important; }
+.light select option { background-color: #F8FAFC; color: #0F172A; }
+
+/* ── Footer ── */
 .light footer {
-  background-color: #E2E8F0 !important;
-  border-color: rgba(0,0,0,0.08) !important;
+  background-color: #E2ECF8 !important;
+  border-color: rgba(0,0,0,0.07) !important;
 }
-.light .text-white { color: #0F172A !important; }
-.light .text-white\/60 { color: #475569 !important; }
-.light .text-white\/50 { color: #64748B !important; }
-.light .text-white\/40 { color: #94A3B8 !important; }
-.light .text-white\/70 { color: #334155 !important; }
-.light .bg-navy-700 { background-color: #CBD5E1 !important; }
-.light .bg-navy-800\/95 { background-color: rgba(255,255,255,0.98) !important; }
+
+/* ── Badges white variant ── */
+.light .bg-white\/10.border.border-white\/20 {
+  background-color: rgba(255,255,255,0.85) !important;
+  border-color: rgba(0,0,0,0.10) !important;
+  color: #334155 !important;
+}
+
+/* ── Floating cards en hero ── */
+.light .backdrop-blur-sm {
+  background-color: rgba(255,255,255,0.85) !important;
+}
+
+/* ── Stat section (banda dorada) ── */
+.light .bg-gradient-to-r.from-solar-600\/20 {
+  background: linear-gradient(to right, rgba(245,158,11,0.08), rgba(245,158,11,0.05), rgba(245,158,11,0.08)) !important;
+  border-color: rgba(245,158,11,0.15) !important;
+}
+
+/* ── Botón toggle tema ── */
+.light .bg-white\/10:not(.glass-card) {
+  background-color: rgba(0,0,0,0.06) !important;
+}
+.light .bg-white\/10:hover {
+  background-color: rgba(0,0,0,0.10) !important;
+}
