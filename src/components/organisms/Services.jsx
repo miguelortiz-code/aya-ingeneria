@@ -22,7 +22,7 @@ export function Services() {
           eyebrow="Nuestros Servicios"
           title="¿Qué"
           highlight="Realizamos?"
-          subtitle="Ofrecemos soluciones integrales en energía solar y térmica para el sector residencial, industrial, hotelero y hospitalario en toda Colombia."
+          subtitle="Ofrecemos soluciones integrales en energía solar térmica y energía solar fotovoltaica para el sector residencial, industrial, hotelero y hospitalario en toda Colombia."
           className="mb-16"
         />
 
