@@ -62,7 +62,7 @@ export function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="container-custom relative z-10 text-center pt-24 pb-16">
+      <div className="container-custom relative z-10 text-center pt-32 pb-16">
         {/* Eyebrow badge */}
         <div
           className={`mb-6 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
@@ -102,18 +102,19 @@ export function Hero() {
         </p>
 
         {/* CTAs */}
-        <div
-          className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 delay-400 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-        >
-          <Button
-            variant="primary"
-            size="lg"
-            onClick={() => scrollTo('contacto')}
-            className="shadow-solar"
+
+        <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 delay-400 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+
+                    
+          <a href="https://wa.me/573192312726?text=Hola,%20me%20interesa%20una%20asesoría%20gratuita%20para%20mi%20proyecto%20solar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{ color: '#FFFFFF', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
           >
             Solicitar Cotización
             <ArrowRight size={20} />
-          </Button>
+          </a>
         </div>
 
         {/* Trust indicators */}

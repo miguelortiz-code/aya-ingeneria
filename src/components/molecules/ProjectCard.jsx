@@ -34,12 +34,25 @@ export function ProjectCard({ slug, name, location, category, description, tags,
         )}
         <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/45 transition-all duration-300" />
         <div className="absolute top-3 right-3">
-          <Badge variant="white">{category}</Badge>
+          <span
+            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium tracking-wide"
+            style={{
+              backgroundColor: 'rgba(255,255,255,0.15)',
+              border: '1px solid rgba(255,255,255,0.35)',
+              color: '#FFFFFF',  // ← siempre blanco
+              backdropFilter: 'blur(4px)',
+            }}
+          >
+            {category}
+          </span>
         </div>
-        <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-white font-heading font-semibold text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
-          <Images size={13} className="text-solar-400" />
+        <div
+          className="absolute bottom-3 left-3 flex items-center gap-1.5 font-heading font-semibold text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0"
+          style={{ color: '#FFFFFF' }}  // ← blanco fijo
+        >
+          <Images size={13} style={{ color: '#FFFFFF' }} />
           <span>Ver galería</span>
-          <ArrowRight size={12} className="text-solar-400" />
+          <ArrowRight size={12} style={{ color: '#FFFFFF' }} />
         </div>
       </div>
 

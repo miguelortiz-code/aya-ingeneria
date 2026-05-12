@@ -37,7 +37,13 @@ export function TestimonialCard({ name, role, company, text, rating, initial, in
 
       {/* Author */}
       <div className="flex items-center gap-3">
-        <div className="w-11 h-11 rounded-full bg-gradient-to-br from-solar-500 to-solar-600 flex items-center justify-center flex-shrink-0 font-heading font-bold text-navy-900 text-base">
+        <div
+          className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 font-heading font-bold text-base"
+          style={{
+            background: 'linear-gradient(135deg, #1565C0, #29B6F6)',
+            color: '#FFFFFF',
+          }}
+        >
           {initial}
         </div>
         <div>

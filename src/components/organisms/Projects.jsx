@@ -15,7 +15,7 @@ export function Projects() {
       className="section-padding relative overflow-hidden"
       aria-labelledby="projects-heading"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-700/20 to-navy-900/40 pointer-events-none" />
+      <div className="absolute inset-0  pointer-events-none" />
 
       <div className="container-custom relative z-10">
         <SectionTitle

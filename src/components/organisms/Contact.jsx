@@ -58,8 +58,8 @@ export function Contact() {
 
             <div className="space-y-5">
               {[
-                { Icon: Phone, label: 'Teléfono / WhatsApp', value: '+57 300 000 0000', href: 'tel:+573000000000' },
-                { Icon: Mail, label: 'Correo Electrónico', value: 'contacto@ayaingenieria.com', href: 'mailto:contacto@ayaingenieria.com' },
+                { Icon: Phone, label: 'Teléfono / WhatsApp', value: '311 805 3452  -  319 231 2726' },
+                { Icon: Mail, label: 'Correo Electrónico', value: 'ayaingenieria21@gmail.com', href: 'mailto:ayaingenieria21@gmail.com' },
                 { Icon: MapPin, label: 'Ubicación', value: 'Bogotá D.C., Colombia', href: null },
               ].map(({ Icon, label, value, href }) => (
                 <div key={label} className="flex items-center gap-4 group">

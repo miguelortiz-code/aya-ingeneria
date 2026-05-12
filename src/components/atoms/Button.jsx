@@ -25,12 +25,15 @@ export function Button({ children, variant = 'primary', size = 'md', className =
     lg: 'px-10 py-5 text-lg',
   }
 
-  return (
-    <button
-      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
-      {...props}
-    >
-      {children}
-    </button>
-  )
+  if (variant === 'primary') {
+    return (
+      <button
+        className={`btn-primary ${sizes[size]} ${className}`}
+        style={{ color: '#FFFFFF' }}  // ← agrega esto
+        {...props}
+      >
+        {children}
+      </button>
+    )
+  }
 }

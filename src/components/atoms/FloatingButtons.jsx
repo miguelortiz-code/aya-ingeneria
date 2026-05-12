@@ -14,7 +14,7 @@ export function FloatingButtons() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
       {/* WhatsApp */}
       <a
-        href="https://wa.me/573000000000?text=Hola,%20me%20interesa%20una%20cotización%20de%20energía%20solar"
+        href="https://wa.me/573192312726?text=Hola,%20me%20interesa%20una%20cotización%20de%20energía%20solar"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"
@@ -30,11 +30,12 @@ export function FloatingButtons() {
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         aria-label="Volver arriba"
-        className={`w-14 h-14 rounded-full bg-solar-500 hover:bg-solar-400 flex items-center justify-center shadow-solar transition-all duration-300 hover:scale-110
+        className={`w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110
           ${showTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}
         `}
+        style={{ backgroundColor: '#1565C0' }}
       >
-        <ArrowUp size={22} className="text-navy-900" />
+        <ArrowUp size={22} color="#FFFFFF" />  {/* ← color blanco explícito */}
       </button>
     </div>
   )
