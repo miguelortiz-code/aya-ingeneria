@@ -1,0 +1,221 @@
+import React from 'react'
+import { useParams, Link, useNavigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
+import { ArrowLeft, MapPin, Calendar, User, Tag } from 'lucide-react'
+import { projects } from '../../data/projects'
+import { GalleryGrid } from '../molecules/GalleryGrid'
+import { Badge } from '../atoms/Badge'
+import { Button } from '../atoms/Button'
+import { MainLayout } from '../templates/MainLayout'
+
+/**
+ * Page: ProjectDetail
+ * Individual project page with full description and image gallery
+ * Route: /proyectos/:slug
+ */
+export default function ProjectDetail() {
+  const { slug } = useParams()
+  const navigate = useNavigate()
+  const project = projects.find((p) => p.slug === slug)
+
+  if (!project) {
+    return (
+      <MainLayout>
+        <div className="min-h-screen flex items-center justify-center text-center px-4 pt-24">
+          <div>
+            <p className="text-6xl mb-4">🔍</p>
+            <h1 className="font-heading font-bold text-white text-3xl mb-3">Proyecto no encontrado</h1>
+            <p className="text-white/50 font-body mb-8">El proyecto que buscas no existe o fue removido.</p>
+            <Link to="/proyectos">
+              <Button variant="primary">Ver todos los proyectos</Button>
+            </Link>
+          </div>
+        </div>
+      </MainLayout>
+    )
+  }
+
+  // Related projects (same category, excluding current)
+  const related = projects.filter((p) => p.category === project.category && p.id !== project.id).slice(0, 3)
+
+  return (
+    <>
+      <Helmet>
+        <title>{project.name} | AYA Ingeniería S.A.S</title>
+        <meta name="description" content={`${project.description} Proyecto realizado por AYA Ingeniería S.A.S en ${project.location}.`} />
+        <meta name="keywords" content={`${project.tags.join(', ')}, energía solar Colombia, AYA Ingeniería, ${project.location}`} />
+        <link rel="canonical" href={`https://ayaingenieriasas.com/proyectos/${project.slug}`} />
+
+        {/* Open Graph */}
+        <meta property="og:type"        content="website" />
+        <meta property="og:url"         content={`https://ayaingenieriasas.com/proyectos/${project.slug}`} />
+        <meta property="og:title"       content={`${project.name} | AYA Ingeniería S.A.S`} />
+        <meta property="og:description" content={project.description} />
+        <meta property="og:image"       content={project.thumbnail || 'https://ayaingenieriasas.com/images/image3.webp'} />
+
+        {/* Twitter */}
+        <meta name="twitter:card"        content="summary_large_image" />
+        <meta name="twitter:title"       content={`${project.name} | AYA Ingeniería S.A.S`} />
+        <meta name="twitter:description" content={project.description} />
+        <meta name="twitter:image"       content={project.thumbnail || 'https://ayaingenieriasas.com/images/image3.webp'} />
+      </Helmet>
+
+      <MainLayout>
+        <div className="pt-28 pb-20 min-h-screen">
+          <div className="container-custom">
+
+            {/* Breadcrumb */}
+            <nav className="flex items-center gap-2 font-body text-sm text-white/40 mb-8" aria-label="Breadcrumb">
+              <Link to="/" className="hover:text-solar-400 transition-colors duration-200">Inicio</Link>
+              <span>/</span>
+              <Link to="/proyectos" className="hover:text-solar-400 transition-colors duration-200">Proyectos</Link>
+              <span>/</span>
+              <span className="text-white/70">{project.name}</span>
+            </nav>
+
+            {/* Back button */}
+            <button
+              onClick={() => navigate(-1)}
+              className="flex items-center gap-2 text-white/50 hover:text-solar-400 font-body text-sm mb-10 transition-colors duration-200 group"
+            >
+              <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform duration-200" />
+              Volver
+            </button>
+
+            <div className="grid lg:grid-cols-3 gap-12">
+              {/* Main content */}
+              <div className="lg:col-span-2">
+                {/* Header */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">{project.icon}</span>
+                    <Badge variant="solar">{project.category}</Badge>
+                  </div>
+                  <h1 className="font-heading font-bold text-white text-4xl lg:text-5xl mb-4">
+                    {project.name}
+                  </h1>
+                  <p className="font-body text-white/60 text-lg leading-relaxed">
+                    {project.fullDescription}
+                  </p>
+                </div>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-10">
+                  {project.tags.map((tag) => (
+                    <Badge key={tag} variant="sky">
+                      <Tag size={11} className="mr-1" />
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+
+                {/* Gallery */}
+                <section aria-label={`Galería de fotos - ${project.name}`}>
+                  <h2 className="font-heading font-bold text-white text-2xl mb-6">
+                    Galería del Proyecto
+                    <span className="ml-3 text-solar-400/60 text-base font-body font-normal">
+                      ({project.gallery.length} fotos)
+                    </span>
+                  </h2>
+                  <GalleryGrid images={project.gallery} columns={2} />
+                </section>
+              </div>
+
+              {/* Sidebar */}
+              <aside className="lg:col-span-1">
+                {/* Project info card */}
+                <div className="glass-card solar-border p-6 mb-6 sticky top-24">
+                  <h3 className="font-heading font-bold text-white text-lg mb-5">
+                    Ficha del Proyecto
+                  </h3>
+                  <div className="space-y-4">
+                    {[
+                      { Icon: User, label: 'Cliente', value: project.client },
+                      { Icon: MapPin, label: 'Ubicación', value: project.location },
+                      { Icon: Calendar, label: 'Año', value: project.year },
+                      { Icon: Tag, label: 'Categoría', value: project.category },
+                    ].map(({ Icon, label, value }) => (
+                      <div key={label} className="flex items-start gap-3">
+                        <div className="w-9 h-9 rounded-lg bg-solar-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                          <Icon size={15} className="text-solar-400" />
+                        </div>
+                        <div>
+                          <p className="font-body text-white/40 text-xs uppercase tracking-wider">{label}</p>
+                          <p className="font-body text-white text-sm font-medium">{value}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 pt-5 border-t border-white/10">
+                    <p className="font-body text-white/50 text-xs mb-4">
+                      ¿Quiere un proyecto similar para su empresa?
+                    </p>
+                    <a   href={`https://wa.me/573192312726?text=Hola,%20me%20interesa%20una%20cotización%20para%20un%20proyecto%20similar%20a%20${encodeURIComponent(project.name)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary w-full justify-center"
+                      style={{ color: '#FFFFFF' }}
+                    >
+                      <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, fill: '#FFFFFF', flexShrink: 0 }}>
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                      </svg>
+                      Solicitar Cotización
+                    </a>
+                  </div>
+                </div>
+              </aside>
+            </div>
+
+            {/* Related projects */}
+            {related.length > 0 && (
+              <section className="mt-20" aria-label="Proyectos relacionados">
+                <h2 className="font-heading font-bold text-white text-2xl mb-8">
+                  Proyectos Relacionados
+                </h2>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {related.map((p) => (
+                    <Link
+                      key={p.id}
+                      to={`/proyectos/${p.slug}`}
+                      className="glass-card solar-border hover:border-solar-500/50 overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover block"
+                    >
+                      {/* Thumbnail con imagen real */}
+                      <div className="relative h-40 overflow-hidden bg-navy-700">
+                        {p.thumbnail ? (
+                          <img
+                            src={p.thumbnail}
+                            alt={`${p.name} - AYA Ingeniería`}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className={`w-full h-full bg-linear-to-br ${p.color} flex items-center justify-center`}>
+                            <span className="text-4xl">{p.icon}</span>
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/30 transition-all duration-300" />
+                      </div>
+
+                      {/* Info */}
+                      <div className="p-4">
+                        <h3 className="font-heading font-bold text-white text-sm mb-1 group-hover:text-solar-300 transition-colors duration-200">
+                          {p.name}
+                        </h3>
+                        <p className="font-body text-white/40 text-xs flex items-center gap-1">
+                          <MapPin size={10} /> {p.location}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
+          </div>
+        </div>
+      </MainLayout>
+    </>
+  )
+}
+
+
