@@ -14,7 +14,7 @@ export function FloatingButtons() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
       {/* WhatsApp */}
       <a
-        href="https://wa.me/573192312726?text=Hola,%20me%20interesa%20una%20cotización%20de%20energía%20solar"
+        href="https://wa.me/573208788737?text=Hola,%20me%20interesa%20una%20cotización%20de%20energía%20solar"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"

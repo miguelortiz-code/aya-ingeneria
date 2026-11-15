@@ -151,7 +151,7 @@ export default function ProjectDetail() {
                     <p className="font-body text-white/50 text-xs mb-4">
                       ¿Quiere un proyecto similar para su empresa?
                     </p>
-                    <a   href={`https://wa.me/573192312726?text=Hola,%20me%20interesa%20una%20cotización%20para%20un%20proyecto%20similar%20a%20${encodeURIComponent(project.name)}`}
+                    <a   href={`https://wa.me/573208788737?text=Hola,%20me%20interesa%20una%20cotización%20para%20un%20proyecto%20similar%20a%20${encodeURIComponent(project.name)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-primary w-full justify-center"
