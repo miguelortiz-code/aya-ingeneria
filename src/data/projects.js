@@ -48,7 +48,7 @@ export const projects = [
     id: 1, slug: 'clinica-cardio-infantil',
     name: 'Clínica Cardio Infantil', location: 'Bogotá, Colombia', category: 'Sector Salud',
     description: 'Sistema solar térmico con colectores tipo Heat Pipe y termotanque de almacenamiento de agua caliente de 3.000 L.',
-    fullDescription: 'Proyecto de instalación de sistema solar térmico de alta capacidad para la Clínica Cardio Infantil en Bogotá. Se instalaron colectores tipo Heat Pipe de alta eficiencia junto con un termotanque de almacenamiento de 3.000 litros en acero inoxidable. El sistema garantiza suministro continuo de agua caliente sanitaria para las instalaciones clínicas, cumpliendo con todos los estándares de higiene hospitalaria.',
+    fullDescription: 'Proyecto de instalación de un sistema solar térmico de alta capacidad para la Clínica Cardio Infantil en Bogotá. Se instalaron colectores tipo Heat Pipe de alta eficiencia junto con seis termotanques de almacenamiento en acero inoxidable: dos de 2.500 litros, tres de 3.000 litros y uno de 2.000 litros, para una capacidad total de 16.000 litros. El sistema garantiza el suministro continuo de agua caliente sanitaria para las instalaciones clínicas y cumple con los estándares de higiene hospitalaria.',
     tags: ['Heat Pipe', 'Sistema Solar', '3.000 L'],
     color: 'from-sky-500/20 to-sky-600/10', year: '2023', client: 'Clínica Cardio Infantil',
     thumbnail: proyect1,
@@ -265,7 +265,7 @@ export const galleryImages = [
   { id: 31, src: image23, alt: 'Termotanque acero inoxidable', categories: ['Calderas'] },
   { id: 32, src: image24, alt: 'Termotanque acero inoxidable', categories: ['Calderas'] },
   { id: 33, src: image25, alt: 'Termotanque acero inoxidable', categories: ['Calderas'] },
-  { id: 33, src: image26, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
+  { id: 34, src: image26, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
 ]
 
 export const galleryVideos = [
