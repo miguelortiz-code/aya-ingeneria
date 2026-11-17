@@ -11,6 +11,7 @@ const proyect9 =  '/proyects/clinica_americas_sur/america1.webp';
 const proyect10 = '/proyects/piscina_yerba_buena/yerba1.webp';
 const proyect11 = '/proyects/clinica_medellin/medellin1.webp';
 const proyect12 = '/proyects/hotel_chinauta/chinauta1.webp';
+const proyect13 = '/proyects/clínica-mederi/clínica-mederi.webp';
 
 //-- Imagenes
 const image1 = '/images/image1.webp';
@@ -40,6 +41,11 @@ const image24 = '/images/image24.webp';
 const image25 = '/images/image25.webp';
 const image26 = '/images/image26.webp';
 const image27 = '/proyects/hotel_chinauta/chinauta2.webp';
+const image28 = '/proyects/clínica-mederi/clínica-mederi.webp';
+const image29 = '/proyects/san-agustino-colegio-suba/san-agustino-colegio-suba-01.webp';
+const image30 = '/proyects/san-agustino-colegio-suba/san-agustino-colegio-suba-02.webp';
+const image31 = 'images/image27.webp';
+const image32 = 'images/image28.webp';
 
 
 
@@ -87,6 +93,7 @@ export const projects = [
       { id: 2, src: image1,   alt: 'Termotanque instalado', caption: 'Termotanque acero inoxidable' },
       { id: 3, src: image2,   alt: 'Colectores Heat Pipe', caption: 'Colectores tipo Heat Pipe' },
       { id: 4, src: image3,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
+      { id: 5, src: image13,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
     ]
   },
   {
@@ -246,7 +253,7 @@ export const galleryImages = [
   { id: 12, src: image5, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
   { id: 13, src: image6, alt: 'Termotanque acero inoxidable', categories: ['Instalaciones'] },
   { id: 14, src: image7, alt: 'Termotanque acero inoxidable', categories: ['Instalaciones'] },
-  { id: 15, src: image8, alt: 'Paneles solares', categories: ['Instalaciones'] },
+  { id: 15, src: image8, alt: 'Paneles solares', categories: ['Paneles'] },
   { id: 16, src: image9, alt: 'Caldera', categories: ['Termotanques'] },
   { id: 17, src: image10, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
   { id: 18, src: image11, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
@@ -266,6 +273,11 @@ export const galleryImages = [
   { id: 32, src: image24, alt: 'Termotanque acero inoxidable', categories: ['Calderas'] },
   { id: 33, src: image25, alt: 'Termotanque acero inoxidable', categories: ['Calderas'] },
   { id: 34, src: image26, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
+  { id: 35, src: image28, alt: 'Termotanque acero inoxidable', categories: ['Termotanques', 'Instalaciones'] },
+  { id: 36, src: image29, alt: 'Paneles Solares', categories: ['Paneles', 'Instalaciones'] },
+  { id: 37, src: image30, alt: 'Paneles Solares', categories: ['Paneles', 'Instalaciones'] },
+  { id: 38, src: image31, alt: 'Calderas', categories: ['Calderas'] },
+  { id: 39, src: image32, alt: 'Calderas', categories: ['Calderas'] },
 ]
 
 export const galleryVideos = [

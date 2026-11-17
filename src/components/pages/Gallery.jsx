@@ -7,7 +7,7 @@ import { GalleryGrid } from '../molecules/GalleryGrid'
 import { SectionTitle } from '../atoms/SectionTitle'
 import { galleryImages, galleryVideos } from '../../data/projects'
 
-const categories = ['Todas', 'Proyectos', 'Colectores', 'Termotanques', 'Instalaciones', 'Calderas']
+const categories = ['Todas', 'Proyectos', 'Colectores', 'Termotanques', 'Instalaciones', 'Calderas', 'Paneles']
 
 const PHOTOS_LIMIT = 6
 
