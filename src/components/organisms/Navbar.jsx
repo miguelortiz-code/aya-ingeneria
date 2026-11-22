@@ -112,22 +112,33 @@ export function Navbar() {
 
           {/* ── Nav desktop ── */}
           <nav className="hidden lg:flex items-center gap-7" aria-label="Navegación principal">
-            {navItems.map(item => (
-              <button
-                key={item.href}
-                onClick={() => handleNav(item)}
-                className="relative font-heading font-semibold text-sm tracking-wide group cursor-pointer"
-                style={{ color: isActive(item) ? textActive : textColor }}
-                onMouseEnter={e => e.currentTarget.style.color = textActive}
-                onMouseLeave={e => e.currentTarget.style.color = isActive(item) ? textActive : textColor}
-              >
-                {item.label}
+            {navItems.map(item => {
+              const commonProps = {
+                className: 'relative font-heading font-semibold text-sm tracking-wide group cursor-pointer',
+                style: { color: isActive(item) ? textActive : textColor },
+                onMouseEnter: e => (e.currentTarget.style.color = textActive),
+                onMouseLeave: e => (e.currentTarget.style.color = isActive(item) ? textActive : textColor),
+              }
+
+              const underline = (
                 <span
                   className="absolute -bottom-1 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-300"
                   style={{ backgroundColor: isTransparent ? '#FFFFFF' : '#29B6F6' }}
                 />
-              </button>
-            ))}
+              )
+
+              return item.route ? (
+                <Link key={item.href} to={item.href} {...commonProps}>
+                  {item.label}
+                  {underline}
+                </Link>
+              ) : (
+                <button key={item.href} onClick={() => handleNav(item)} {...commonProps}>
+                  {item.label}
+                  {underline}
+                </button>
+              )
+            })}
           </nav>
 
           {/* ── CTA desktop ── */}
@@ -185,19 +196,30 @@ export function Navbar() {
         >
           {/* Nav items móvil */}
           <nav className="flex flex-col gap-1" aria-label="Navegación móvil">
-            {navItems.map(item => (
-              <button
-                key={item.href}
-                onClick={() => handleNav(item)}
-                className="block w-full text-left px-4 py-3 font-heading font-semibold text-base rounded-xl transition-all duration-200 cursor-pointer"
-                style={{
+            {navItems.map(item => {
+              const commonProps = {
+                className: 'block w-full text-left px-4 py-3 font-heading font-semibold text-base rounded-xl transition-all duration-200 cursor-pointer',
+                style: {
                   color: isActive(item) ? 'var(--accent-primary)' : 'var(--text-primary)',
                   backgroundColor: isActive(item) ? 'rgba(41,182,246,0.08)' : 'transparent',
-                }}
-              >
-                {item.label}
-              </button>
-            ))}
+                },
+              }
+
+              return item.route ? (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  onClick={() => setOpen(false)}
+                  {...commonProps}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button key={item.href} onClick={() => handleNav(item)} {...commonProps}>
+                  {item.label}
+                </button>
+              )
+            })}
           </nav>
 
           <div className="mt-4 pt-4 flex flex-col gap-2"
