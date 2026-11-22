@@ -9,6 +9,20 @@ import { projects } from '../../data/projects'
 import { useInView } from '../../hooks/useInView'
 
 const categories = ['Todos', 'Sector Salud', 'Sector Hotelero', 'Sector Educativo', 'Residencial', 'Ecoturismo', 'Comunidad Religiosa', 'Sector Rural', 'Recreativo']
+const faqs = [
+  {
+    q: '¿En qué tipo de lugares instalan sistemas solares?',
+    a: 'En clínicas y hospitales, hoteles, colegios, comunidades religiosas, fincas, glampings, piscinas y viviendas.',
+  },
+  {
+    q: '¿Trabajan fuera de Bogotá?',
+    a: 'Sí. Además de Bogotá, hemos realizado proyectos en Cundinamarca, Antioquia y San Andrés.',
+  },
+  {
+    q: '¿Cómo solicito una cotización?',
+    a: 'Escríbanos por WhatsApp o déjenos sus datos en el formulario de contacto. La asesoría y la cotización no tienen costo.',
+  },
+]
 
 function ProjectListCard({ project, index }) {
   const { ref, inView } = useInView()
@@ -119,8 +133,22 @@ export default function ProjectsList() {
               highlight="Realizados"
               subtitle={`${projects.length} proyectos completados en toda Colombia.`}
               align="left"
-              className="mb-12"
+              className="mb-6"
             />
+
+            <p
+              className="font-body text-base leading-relaxed max-w-3xl mb-10"
+              style={{ color: 'var(--text-muted)' }}
+            >
+                En AYA Ingeniería S.A.S llevamos más de 10 años fabricando e instalando sistemas solares
+                térmicos y termotanques en acero inoxidable en Colombia. Este portafolio reúne proyectos
+                reales en clínicas, hoteles, colegios, comunidades religiosas, fincas, glampings y
+                residencias, en Bogotá, Cundinamarca, Antioquia y San Andrés. Hemos trabajado con
+                colectores solares tipo Heat Pipe, placa plana y mariposa, y con almacenamiento desde
+                800 litros hasta 40.000 litros. En cada proyecto encontrará el sistema instalado, su
+                capacidad y la solución que aplicamos para garantizar agua caliente de forma eficiente,
+                con menor consumo de gas o electricidad.
+            </p>
 
             <div className="flex flex-wrap gap-2 mb-10" role="tablist">
               {categories.map((cat) => (
@@ -150,6 +178,30 @@ export default function ProjectsList() {
               ))}
             </div>
 
+            <section className="mt-20 max-w-3xl" aria-labelledby="faq-proyectos">
+              <h2
+                id="faq-proyectos"
+                className="font-heading font-bold text-2xl mb-6"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                Preguntas frecuentes
+              </h2>
+              <div className="space-y-4">
+                {faqs.map(({ q, a }) => (
+                  <div key={q} className="glass-card solar-border p-5">
+                    <h3
+                      className="font-heading font-semibold text-base mb-2"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      {q}
+                    </h3>
+                    <p className="font-body text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                      {a}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
           </div>
         </div>
       </MainLayout>

@@ -139,7 +139,7 @@ export default function Gallery() {
               eyebrow="Galería"
               title="Proyectos en"
               highlight="Fotos y Videos"
-              subtitle="Conoce de primera mano los sistemas solares, colectores y termotanques que hemos instalado en toda Colombia."
+              subtitle="Fotos y videos reales de las instalaciones que AYA Ingeniería S.A.S ha realizado en Colombia: colectores solares, termotanques en acero inoxidable, calderas y sistemas completos de agua caliente en clínicas, hoteles, colegios y viviendas. Use los filtros para ver cada tipo de trabajo y conocer de cerca la calidad de nuestros equipos y del montaje en obra."
               align="left"
               className="mb-10"
             />
