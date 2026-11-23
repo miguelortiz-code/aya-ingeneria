@@ -1,28 +1,35 @@
-// -- Imaganes de proyectos
-const proyect1 = '/proyects/image1.webp';
-const proyect2 = '/proyects/image2.webp';
-const proyect3 = '/proyects/image3.webp';
-const proyect4 = '/proyects/image4.webp';
-const proyect5 = '/proyects/image5.webp';
-const proyect6 = '/proyects/image6.webp';
-const proyect7 = '/proyects/image7.webp';
-const proyect8 = '/proyects/santa_teresa_yornet/yornet1.webp';
-const proyect9 =  '/proyects/clinica_americas_sur/america1.webp';
-const proyect10 = '/proyects/piscina_yerba_buena/yerba1.webp';
-const proyect11 = '/proyects/clinica_medellin/medellin1.webp';
-const proyect12 = '/proyects/hotel_chinauta/chinauta1.webp';
-const proyect13 = '/proyects/clínica-mederi/clínica-mederi.webp';
+// ── Imágenes de proyectos (fotos reales en /public/proyects) ──
+const proyect1  = '/proyects/image1.webp';                              // Clínica Cardio Infantil
+const proyect2  = '/proyects/image2.webp';                              // Hotel Las Américas
+const proyect3  = '/proyects/image3.webp';                              // San Agustino colegio Suba
+const proyect4  = '/proyects/image4.webp';                              // Glamping Magiclove
+const proyect5  = '/proyects/image5.webp';                              // Casa Vacacional Silvania
+const proyect6  = '/proyects/image6.webp';                              // Finca El Fin del Afán
+const proyect7  = '/proyects/image7.webp';                              // Méderi
+const proyect8  = '/proyects/santa_teresa_yornet/yornet1.webp';         // Santa Teresa de Jornet
+const proyect9  = '/proyects/clinica_americas_sur/america1.webp';       // Clínica Américas del Sur
+const proyect10 = '/proyects/piscina_yerba_buena/yerba1.webp';          // Piscina Yerbabuena
+const proyect11 = '/proyects/clinica_medellin/medellin1.webp';          // Clínica Américas Medellín
+const proyect12 = '/proyects/hotel_chinauta/chinauta1.webp';            // Hotel Chinauta Real
+const proyect13 = '/proyects/clinica-mederi/clinica-mederi.webp';       // Méderi (foto 2)
 
-//-- Imagenes
-const image1 = '/images/image1.webp';
-const image2 = '/images/image2.webp';
-const image3 = '/images/image3.webp';
-const image4 = '/images/image4.webp';
-const image5 = '/images/image5.webp';
-const image6 = '/images/image6.webp';
-const image7 = '/images/image7.webp';
-const image8 = '/images/image8.webp';
-const image9 = '/images/image9.webp';
+// Fotos adicionales de proyectos
+const yornet2   = '/proyects/santa_teresa_yornet/yornet2.webp';
+const yornet3   = '/proyects/santa_teresa_yornet/yornet3.webp';
+const chinauta2 = '/proyects/hotel_chinauta/chinauta2.webp';
+const agustino1 = '/proyects/san-agustino-colegio-suba/san-agustino-colegio-suba-01.webp';
+const agustino2 = '/proyects/san-agustino-colegio-suba/san-agustino-colegio-suba-02.webp';
+
+// ── Imágenes generales de la galería (/public/images) ──
+const image1  = '/images/image1.webp';
+const image2  = '/images/image2.webp';
+const image3  = '/images/image3.webp';
+const image4  = '/images/image4.webp';
+const image5  = '/images/image5.webp';
+const image6  = '/images/image6.webp';
+const image7  = '/images/image7.webp';
+const image8  = '/images/image8.webp';
+const image9  = '/images/image9.webp';
 const image10 = '/images/image10.webp';
 const image11 = '/images/image11.webp';
 const image12 = '/images/image12.webp';
@@ -40,30 +47,29 @@ const image23 = '/images/image23.webp';
 const image24 = '/images/image24.webp';
 const image25 = '/images/image25.webp';
 const image26 = '/images/image26.webp';
-const image27 = '/proyects/hotel_chinauta/chinauta2.webp';
-const image28 = '/proyects/clínica-mederi/clínica-mederi.webp';
-const image29 = '/proyects/san-agustino-colegio-suba/san-agustino-colegio-suba-01.webp';
-const image30 = '/proyects/san-agustino-colegio-suba/san-agustino-colegio-suba-02.webp';
-const image31 = 'images/image27.webp';
-const image32 = 'images/image28.webp';
+const image27 = '/images/image27.webp';
+const image28 = '/images/image28.webp';
 
-
+// Construye la galería de un proyecto a partir de sus fotos reales
+function realGallery(name, srcs) {
+  return srcs.map((src, i) => ({
+    id: i + 1,
+    src,
+    alt: `${name} - instalación de AYA Ingeniería, foto ${i + 1}`,
+    caption: name,
+  }))
+}
 
 export const projects = [
   {
     id: 1, slug: 'clinica-cardio-infantil',
     name: 'Clínica Cardio Infantil', location: 'Bogotá, Colombia', category: 'Sector Salud',
-    description: 'Sistema solar térmico con colectores tipo Heat Pipe y termotanque de almacenamiento de agua caliente de 3.000 L.',
+    description: 'Sistema solar térmico con colectores tipo Heat Pipe y seis termotanques en acero inoxidable, con 16.000 L de almacenamiento de agua caliente.',
     fullDescription: 'Proyecto de instalación de un sistema solar térmico de alta capacidad para la Clínica Cardio Infantil en Bogotá. Se instalaron colectores tipo Heat Pipe de alta eficiencia junto con seis termotanques de almacenamiento en acero inoxidable: dos de 2.500 litros, tres de 3.000 litros y uno de 2.000 litros, para una capacidad total de 16.000 litros. El sistema garantiza el suministro continuo de agua caliente sanitaria para las instalaciones clínicas y cumple con los estándares de higiene hospitalaria.',
-    tags: ['Heat Pipe', 'Sistema Solar', '3.000 L'],
+    tags: ['Heat Pipe', 'Sistema Solar', '16.000 L'],
     color: 'from-sky-500/20 to-sky-600/10', year: '2023', client: 'Clínica Cardio Infantil',
     thumbnail: proyect1,
-    gallery: [
-      { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Vista general', caption: 'Vista general del sistema' },
-      { id: 2, src: image1,   alt: 'Termotanque instalado', caption: 'Termotanque acero inoxidable' },
-      { id: 3, src: image2,   alt: 'Colectores Heat Pipe', caption: 'Colectores tipo Heat Pipe' },
-      { id: 4, src: image3,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
-    ]
+    gallery: realGallery('Clínica Cardio Infantil', [proyect1]),
   },
   {
     id: 2, slug: 'hotel-las-americas-san-andres',
@@ -73,43 +79,27 @@ export const projects = [
     tags: ['Termotanques', 'Aislamiento Térmico', '10.000 L total'], icon: '🏨',
     color: 'from-solar-500/20 to-solar-600/10', year: '2023', client: 'Hotel Las Américas',
     thumbnail: proyect2,
-    gallery: [
-      { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Vista general', caption: 'Vista general del sistema' },
-      { id: 2, src: image1,   alt: 'Termotanque instalado', caption: 'Termotanque acero inoxidable' },
-      { id: 3, src: image2,   alt: 'Colectores Heat Pipe', caption: 'Colectores tipo Heat Pipe' },
-      { id: 4, src: image3,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
-    ]
+    gallery: realGallery('Hotel Las Américas', [proyect2]),
   },
   {
-    id: 3, slug: 'santa-teresa-de-Jornet',
+    id: 3, slug: 'santa-teresa-de-jornet',
     name: 'Santa Teresa de Jornet', location: 'Colombia', category: 'Comunidad Religiosa',
     description: 'Sistema central de agua caliente de 3.000 L con colectores tipo mariposa para suministro permanente de agua caliente sanitaria.',
     fullDescription: 'La comunidad religiosa Santa Teresa de Jornet contó con la instalación de un sistema central de agua caliente de alta eficiencia. Se instalaron colectores solares tipo mariposa junto con un sistema de almacenamiento de 3.000 litros. El sistema proporciona agua caliente sanitaria permanente para todas las dependencias de la comunidad, reduciendo considerablemente el consumo de gas.',
     tags: ['Colectores Mariposa', 'Agua Caliente Central', '3.000 L'], icon: '🏛️',
     color: 'from-eco-500/20 to-eco-400/10', year: '2022', client: 'Comunidad Santa Teresa de Jornet',
     thumbnail: proyect8,
-    gallery: [
-      { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Vista general', caption: 'Vista general del sistema' },
-      { id: 2, src: image1,   alt: 'Termotanque instalado', caption: 'Termotanque acero inoxidable' },
-      { id: 3, src: image2,   alt: 'Colectores Heat Pipe', caption: 'Colectores tipo Heat Pipe' },
-      { id: 4, src: image3,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
-      { id: 5, src: image13,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
-    ]
+    gallery: realGallery('Santa Teresa de Jornet', [proyect8, yornet2, yornet3]),
   },
   {
     id: 4, slug: 'colegio-agustinos-recoletos',
-    name: 'Colegio Agustinos Recoletos', location: 'Bogotá, Colombia', category: 'Sector Educativo',
+    name: 'San Agustino colegio Suba', location: 'Bogotá, Colombia', category: 'Sector Educativo',
     description: 'Sistema solar de 1.000 L con colectores tipo placa plana para suministro de agua caliente en instalaciones deportivas y sanitarias.',
-    fullDescription: 'El Colegio Agustinos Recoletos recibió la instalación de un sistema solar de placa plana de 1.000 litros. Los colectores fueron seleccionados por su óptimo rendimiento en el clima bogotano. El sistema abastece de agua caliente las duchas de las instalaciones deportivas y los servicios sanitarios del colegio.',
+    fullDescription: 'En San Agustino colegio Suba se instaló un sistema solar de placa plana de 1.000 litros. Los colectores fueron seleccionados por su óptimo rendimiento en el clima bogotano. El sistema abastece de agua caliente las duchas de las instalaciones deportivas y los servicios sanitarios del colegio.',
     tags: ['Placa Plana', 'Sistema Solar', '1.000 L'], icon: '🎓',
-    color: 'from-solar-400/20 to-solar-300/10', year: '2022', client: 'Colegio Agustinos Recoletos',
+    color: 'from-solar-400/20 to-solar-300/10', year: '2022', client: 'San Agustino colegio Suba',
     thumbnail: proyect3,
-    gallery: [
-      { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Vista general', caption: 'Vista general del sistema' },
-      { id: 2, src: image1,   alt: 'Termotanque instalado', caption: 'Termotanque acero inoxidable' },
-      { id: 3, src: image2,   alt: 'Colectores Heat Pipe', caption: 'Colectores tipo Heat Pipe' },
-      { id: 4, src: image3,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
-    ]
+    gallery: realGallery('San Agustino colegio Suba', [proyect3, agustino1, agustino2]),
   },
   {
     id: 5, slug: 'finca-fin-del-afan-vergara',
@@ -119,12 +109,7 @@ export const projects = [
     tags: ['Placa Plana', 'Solar Térmico', '800 L'], icon: '🌿',
     color: 'from-eco-500/20 to-sky-500/10', year: '2023', client: 'Finca El Fin del Afán',
     thumbnail: proyect6,
-    gallery: [
-      { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Vista general', caption: 'Vista general del sistema' },
-      { id: 2, src: image1,   alt: 'Termotanque instalado', caption: 'Termotanque acero inoxidable' },
-      { id: 3, src: image2,   alt: 'Colectores Heat Pipe', caption: 'Colectores tipo Heat Pipe' },
-      { id: 4, src: image3,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
-    ]
+    gallery: realGallery('Finca El Fin del Afán', [proyect6]),
   },
   {
     id: 6, slug: 'clinica-americas-del-sur-envigado',
@@ -134,12 +119,7 @@ export const projects = [
     tags: ['Acero Inoxidable', 'Gran Escala', '40.000 L total'], icon: '🏥',
     color: 'from-sky-400/20 to-sky-600/10', year: '2023', client: 'Clínica Américas del Sur',
     thumbnail: proyect9,
-    gallery: [
-      { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Vista general', caption: 'Vista general del sistema' },
-      { id: 2, src: image1,   alt: 'Termotanque instalado', caption: 'Termotanque acero inoxidable' },
-      { id: 3, src: image2,   alt: 'Colectores Heat Pipe', caption: 'Colectores tipo Heat Pipe' },
-      { id: 4, src: image3,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
-    ]
+    gallery: realGallery('Clínica Américas del Sur', [proyect9]),
   },
   {
     id: 7, slug: 'mederi-hospital-universitario',
@@ -149,12 +129,7 @@ export const projects = [
     tags: ['Termotanque', 'Acero Inoxidable', '5.000 L'], icon: '🏨',
     color: 'from-solar-500/20 to-orange-500/10', year: '2022', client: 'Méderi Hospital Universitario',
     thumbnail: proyect7,
-    gallery: [
-      { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Vista general', caption: 'Vista general del sistema' },
-      { id: 2, src: image1,   alt: 'Termotanque instalado', caption: 'Termotanque acero inoxidable' },
-      { id: 3, src: image2,   alt: 'Colectores Heat Pipe', caption: 'Colectores tipo Heat Pipe' },
-      { id: 4, src: image3,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
-    ]
+    gallery: realGallery('Méderi Hospital Universitario', [proyect7, proyect13]),
   },
   {
     id: 8, slug: 'glamping-magiclove-san-francisco',
@@ -164,12 +139,7 @@ export const projects = [
     tags: ['Colectores Solares', 'Ecoturismo', 'Sostenible'], icon: '🏕️',
     color: 'from-eco-500/20 to-eco-400/10', year: '2023', client: 'Glamping Magiclove',
     thumbnail: proyect4,
-    gallery: [
-      { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Vista general', caption: 'Vista general del sistema' },
-      { id: 2, src: image1,   alt: 'Termotanque instalado', caption: 'Termotanque acero inoxidable' },
-      { id: 3, src: image2,   alt: 'Colectores Heat Pipe', caption: 'Colectores tipo Heat Pipe' },
-      { id: 4, src: image3,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
-    ]
+    gallery: realGallery('Glamping Magiclove', [proyect4]),
   },
   {
     id: 9, slug: 'casa-vacacional-silvania',
@@ -179,12 +149,7 @@ export const projects = [
     tags: ['Colectores Solares', 'Residencial', 'Eficiencia'], icon: '🏡',
     color: 'from-solar-300/20 to-solar-500/10', year: '2023', client: 'Propietario privado',
     thumbnail: proyect5,
-    gallery: [
-      { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Vista general', caption: 'Vista general del sistema' },
-      { id: 2, src: image1,   alt: 'Termotanque instalado', caption: 'Termotanque acero inoxidable' },
-      { id: 3, src: image2,   alt: 'Colectores Heat Pipe', caption: 'Colectores tipo Heat Pipe' },
-      { id: 4, src: image3,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
-    ]
+    gallery: realGallery('Casa Vacacional Silvania', [proyect5]),
   },
   {
     id: 10, slug: 'piscina-yerbabuena-cundinamarca',
@@ -194,12 +159,7 @@ export const projects = [
     tags: ['Calentadores Solares', 'Piscina', 'Climatización'], icon: '🏊',
     color: 'from-sky-500/20 to-sky-400/10', year: '2022', client: 'Club Campestre Yerbabuena',
     thumbnail: proyect10,
-    gallery: [
-      { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Vista general', caption: 'Vista general del sistema' },
-      { id: 2, src: image1,   alt: 'Termotanque instalado', caption: 'Termotanque acero inoxidable' },
-      { id: 3, src: image2,   alt: 'Colectores Heat Pipe', caption: 'Colectores tipo Heat Pipe' },
-      { id: 4, src: image3,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
-    ]
+    gallery: realGallery('Piscina Yerbabuena', [proyect10]),
   },
   {
     id: 11, slug: 'clinica-americas-medellin',
@@ -209,24 +169,17 @@ export const projects = [
     tags: ['Heat Pipe', 'Sistema Solar', '3.000 L'],
     color: 'from-sky-500/20 to-sky-600/10', year: '2023', client: 'Clínica americas Medellín',
     thumbnail: proyect11,
-    gallery: [
-      { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Vista general', caption: 'Vista general del sistema' },
-      { id: 2, src: image1,   alt: 'Termotanque instalado', caption: 'Termotanque acero inoxidable' },
-      { id: 3, src: image2,   alt: 'Colectores Heat Pipe', caption: 'Colectores tipo Heat Pipe' },
-      { id: 4, src: image3,   alt: 'Instalación completa', caption: 'Sistema finalizado' },
-    ]
+    gallery: realGallery('Clínica Américas Medellín', [proyect11]),
   },
   {
     id: 12, slug: 'Hotel-chinauta-real',
-    name: 'Hotel Chinauta Real ', location: 'Chinauta, Cundinamarca', category: 'Sector Hotelero',
+    name: 'Hotel Chinauta Real', location: 'Chinauta, Cundinamarca', category: 'Sector Hotelero',
     description: 'Sistema solar térmico con colectores tipo Heat Pipe y termotanque de almacenamiento de agua caliente de 3.000 L.',
     fullDescription: 'Proyecto de instalación de sistema solar térmico de alta capacidad para la Clínica americas Medellín en Envigado. Se instalaron colectores tipo Heat Pipe de alta eficiencia junto con un termotanque de almacenamiento de 3.000 litros en acero inoxidable. El sistema garantiza suministro continuo de agua caliente sanitaria para las instalaciones clínicas, cumpliendo con todos los estándares de higiene hospitalaria.',
     tags: ['Heat Pipe', 'Sistema Solar', '3.000 L'],
     color: 'from-sky-500/20 to-sky-600/10', year: '2023', client: 'Hotel Chinauta Real',
     thumbnail: proyect12,
-    gallery: [
-      { id: 1, src: image27, alt: 'Hotel Chinauta Real - Vista general', caption: 'Vista general del sistema' },
-    ]
+    gallery: realGallery('Hotel Chinauta Real', [proyect12, chinauta2]),
   },
 ]
 
@@ -239,13 +192,14 @@ export const projectStats = [
 
 export const galleryImages = [
   // ── Fotos de proyectos ──
-  { id: 1, src: proyect1, alt: 'Clínica americas Medellín - Sistema Heat Pipe', categories: ['Proyectos', 'Termotanques']},
-  { id: 2, src: proyect2, alt: 'Hotel Las Américas - Termotanques San Andrés', categories: ['Proyectos', 'Termotanques']},
-  { id: 3, src: proyect3, alt: 'Colegio Agustinos Recoletos - Placa Plana', categories: ['Proyectos', 'Termotanques']},
-  { id: 4, src: proyect4, alt: 'Glamping Magiclove - Colectores Solares', categories: ['Proyectos', 'Termotanques'],},
-  { id: 5, src: proyect5, alt: 'Casa Vacacional Silvania - Colectores', categories: ['Proyectos', 'Termotanques']},
-  { id: 6, src: proyect6, alt: 'Finca El Fin del Afán - Solar Térmico', categories: ['Proyectos', 'Termotanques']},
-  { id: 7, src: proyect7, alt: 'Méderi Hospital Universitario - Acero Inoxidable', categories: ['Proyectos', 'Termotanques']},
+  { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Sistema Heat Pipe', categories: ['Proyectos', 'Termotanques'] },
+  { id: 2, src: proyect2, alt: 'Hotel Las Américas - Termotanques San Andrés', categories: ['Proyectos', 'Termotanques'] },
+  { id: 3, src: proyect3, alt: 'San Agustino colegio Suba - Placa Plana', categories: ['Proyectos', 'Termotanques'] },
+  { id: 4, src: proyect4, alt: 'Glamping Magiclove - Colectores Solares', categories: ['Proyectos', 'Termotanques'] },
+  { id: 5, src: proyect5, alt: 'Casa Vacacional Silvania - Colectores', categories: ['Proyectos', 'Termotanques'] },
+  { id: 6, src: proyect6, alt: 'Finca El Fin del Afán - Solar Térmico', categories: ['Proyectos', 'Termotanques'] },
+  { id: 7, src: proyect7, alt: 'Méderi Hospital Universitario - Acero Inoxidable', categories: ['Proyectos', 'Termotanques'] },
+  // ── Fotos generales ──
   { id: 8, src: image1, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
   { id: 9, src: image2, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
   { id: 10, src: image3, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
@@ -273,19 +227,19 @@ export const galleryImages = [
   { id: 32, src: image24, alt: 'Termotanque acero inoxidable', categories: ['Calderas'] },
   { id: 33, src: image25, alt: 'Termotanque acero inoxidable', categories: ['Calderas'] },
   { id: 34, src: image26, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
-  { id: 35, src: image28, alt: 'Termotanque acero inoxidable', categories: ['Termotanques', 'Instalaciones'] },
-  { id: 36, src: image29, alt: 'Paneles Solares', categories: ['Paneles', 'Instalaciones'] },
-  { id: 37, src: image30, alt: 'Paneles Solares', categories: ['Paneles', 'Instalaciones'] },
-  { id: 38, src: image31, alt: 'Calderas', categories: ['Calderas'] },
-  { id: 39, src: image32, alt: 'Calderas', categories: ['Calderas'] },
+  { id: 35, src: proyect13, alt: 'Méderi Hospital Universitario - Termotanque', categories: ['Termotanques', 'Instalaciones'] },
+  { id: 36, src: agustino1, alt: 'San Agustino colegio Suba - Paneles solares', categories: ['Paneles', 'Instalaciones'] },
+  { id: 37, src: agustino2, alt: 'San Agustino colegio Suba - Paneles solares', categories: ['Paneles', 'Instalaciones'] },
+  { id: 38, src: image27, alt: 'Caldera', categories: ['Calderas'] },
+  { id: 39, src: image28, alt: 'Caldera', categories: ['Calderas'] },
 ]
 
 export const galleryVideos = [
-   {
+  {
     id: 'v1',
     type: 'local',
     src: '/videos/video1.mp4',
-    thumbnail: image3, 
+    thumbnail: image3,
     title: 'Instalación sistema solar térmico - AYA Ingeniería',
     description: 'Proceso de instalación de colectores solares tipo Heat Pipe en Bogotá.',
     duration: '0:50',
@@ -309,5 +263,3 @@ export const galleryVideos = [
   //   duration: '2:55',
   // },
 ]
-
-
