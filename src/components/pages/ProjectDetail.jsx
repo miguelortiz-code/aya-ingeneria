@@ -114,7 +114,7 @@ export default function ProjectDetail() {
                   <h2 className="font-heading font-bold text-white text-2xl mb-6">
                     Galería del Proyecto
                     <span className="ml-3 text-solar-400/60 text-base font-body font-normal">
-                      ({project.gallery.length} fotos)
+                      ({project.gallery.length} {project.gallery.length === 1 ? 'foto' : 'fotos'})
                     </span>
                   </h2>
                   <GalleryGrid images={project.gallery} columns={2} />

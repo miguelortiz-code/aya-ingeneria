@@ -1,5 +1,3 @@
-import React from 'react'
-
 /**
  * Atom: SectionTitle
  * Consistent heading block for all sections
@@ -21,7 +19,7 @@ export function SectionTitle({ eyebrow, title, highlight, subtitle, align = 'cen
       <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
         {title}{' '}
         {highlight && (
-          <span className="bg-gradient-to-r from-solar-500 to-solar-300 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-solar-500 to-solar-300 bg-clip-text text-transparent">
             {highlight}
           </span>
         )}
@@ -34,5 +32,3 @@ export function SectionTitle({ eyebrow, title, highlight, subtitle, align = 'cen
     </div>
   )
 }
-
-
