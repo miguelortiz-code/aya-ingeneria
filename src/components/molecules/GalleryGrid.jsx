@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { ZoomIn } from 'lucide-react'
 import { Lightbox } from './Lightbox'
 import { useInView } from '../../hooks/useInView'
+import { projects } from '../../data/projects'
 
 /**
  * Molecule: GalleryGrid
@@ -51,12 +52,24 @@ export function GalleryGrid({ images, columns = 3 }) {
                 <ZoomIn size={22} color="#FFFFFF" />
               </div>
             </div>
-            {/* Caption */}
-            {img.caption && (
-              <div className="absolute bottom-0 left-0 right-0 p-3 bg-linear-to-t from-navy-900/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <p className="font-body text-white text-xs">{img.caption}</p>
-              </div>
-            )}
+{/* Caption: nombre del proyecto, o el caption de la foto si no tiene proyecto */}
+{(() => {
+  const project = img.projectSlug
+    ? projects.find(p => p.slug === img.projectSlug)
+    : null
+  const label = project?.name || img.caption
+  if (!label) return null
+  return (
+    <div
+      className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+      style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85), transparent)' }}
+    >
+      <p className="font-body text-xs font-semibold text-left" style={{ color: '#FFFFFF' }}>
+        {label}
+      </p>
+    </div>
+  )
+})()}
           </button>
         ))}
       </div>

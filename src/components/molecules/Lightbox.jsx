@@ -1,5 +1,7 @@
 import React, { useEffect, useCallback } from 'react'
-import { X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { X, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react'
+import { projects } from '../../data/projects'
 
 /**
  * Molecule: Lightbox
@@ -23,6 +25,7 @@ export function Lightbox({ images, currentIndex, onClose, onPrev, onNext }) {
 
   if (!images[currentIndex]) return null
   const img = images[currentIndex]
+  const project =  img.projectSlug ? projects.find(p => p.slug === img.projectSlug) : null
 
   return (
     <div
@@ -67,9 +70,25 @@ export function Lightbox({ images, currentIndex, onClose, onPrev, onNext }) {
           alt={img.alt}
           className="max-h-[75vh] max-w-full object-contain rounded-xl shadow-2xl"
         />
-        {img.caption && (
-          <p className="mt-4 text-white/60 font-body text-sm text-center">{img.caption}</p>
-        )}
+        {project ? (
+          <div className="mt-4 flex flex-col sm:flex-row items-center gap-3">
+            <p className="font-body text-sm font-semibold" style={{ color: '#FFFFFF' }}>
+              {project.name}
+            </p>
+            <Link
+              to={`/proyectos/${project.slug}`}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full font-heading font-semibold text-xs transition-transform duration-200 hover:scale-105"
+              style={{ backgroundColor: '#1565C0', color: '#FFFFFF' }}
+            >
+              Ver proyecto
+              <ArrowRight size={14} color="#FFFFFF" />
+            </Link>
+          </div>
+        ) : img.caption ? (
+          <p className="mt-4 font-body text-sm text-center" style={{ color: 'rgba(255,255,255,0.70)' }}>
+            {img.caption}
+          </p>
+        ) : null}
       </div>
 
       {/* Next */}

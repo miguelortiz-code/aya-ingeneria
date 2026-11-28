@@ -192,13 +192,13 @@ export const projectStats = [
 
 export const galleryImages = [
   // ── Fotos de proyectos ──
-  { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Sistema Heat Pipe', categories: ['Proyectos', 'Termotanques'] },
-  { id: 2, src: proyect2, alt: 'Hotel Las Américas - Termotanques San Andrés', categories: ['Proyectos', 'Termotanques'] },
-  { id: 3, src: proyect3, alt: 'San Agustino colegio Suba - Placa Plana', categories: ['Proyectos', 'Termotanques'] },
-  { id: 4, src: proyect4, alt: 'Glamping Magiclove - Colectores Solares', categories: ['Proyectos', 'Termotanques'] },
-  { id: 5, src: proyect5, alt: 'Casa Vacacional Silvania - Colectores', categories: ['Proyectos', 'Termotanques'] },
-  { id: 6, src: proyect6, alt: 'Finca El Fin del Afán - Solar Térmico', categories: ['Proyectos', 'Termotanques'] },
-  { id: 7, src: proyect7, alt: 'Méderi Hospital Universitario - Acero Inoxidable', categories: ['Proyectos', 'Termotanques'] },
+  { id: 1, src: proyect1, alt: 'Clínica Cardio Infantil - Sistema Heat Pipe', categories: ['Proyectos', 'Termotanques'], projectSlug: 'clinica-cardio-infantil'},
+  { id: 2, src: proyect2, alt: 'Hotel Las Américas - Termotanques San Andrés', categories: ['Proyectos', 'Termotanques'], projectSlug: 'hotel-las-americas-san-andres' },
+  { id: 3, src: proyect3, alt: 'San Agustino colegio Suba - Placa Plana', categories: ['Proyectos', 'Termotanques'], projectSlug: 'colegio-agustinos-recoletos'},
+  { id: 4, src: proyect4, alt: 'Glamping Magiclove - Colectores Solares', categories: ['Proyectos', 'Termotanques'], projectSlug: 'glamping-magiclove-san-francisco'},
+  { id: 5, src: proyect5, alt: 'Casa Vacacional Silvania - Colectores', categories: ['Proyectos', 'Termotanques'], projectSlug: 'casa-vacacional-silvania'},
+  { id: 6, src: proyect6, alt: 'Finca El Fin del Afán - Solar Térmico', categories: ['Proyectos', 'Termotanques'], projectSlug: 'finca-fin-del-afan-vergara'},
+  { id: 7, src: proyect7, alt: 'Méderi Hospital Universitario - Acero Inoxidable', categories: ['Proyectos', 'Termotanques'], projectSlug: 'mederi-hospital-universitario'},
   // ── Fotos generales ──
   { id: 8, src: image1, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
   { id: 9, src: image2, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
@@ -227,9 +227,9 @@ export const galleryImages = [
   { id: 32, src: image24, alt: 'Termotanque acero inoxidable', categories: ['Calderas'] },
   { id: 33, src: image25, alt: 'Termotanque acero inoxidable', categories: ['Calderas'] },
   { id: 34, src: image26, alt: 'Termotanque acero inoxidable', categories: ['Termotanques'] },
-  { id: 35, src: proyect13, alt: 'Méderi Hospital Universitario - Termotanque', categories: ['Termotanques', 'Instalaciones'] },
-  { id: 36, src: agustino1, alt: 'San Agustino colegio Suba - Paneles solares', categories: ['Paneles', 'Instalaciones'] },
-  { id: 37, src: agustino2, alt: 'San Agustino colegio Suba - Paneles solares', categories: ['Paneles', 'Instalaciones'] },
+  { id: 35, src: proyect13, alt: 'Méderi Hospital Universitario - Termotanque', categories: ['Termotanques', 'Instalaciones'], projectSlug: 'mederi-hospital-universitario'},
+  { id: 36, src: agustino1, alt: 'San Agustino colegio Suba - Paneles solares', categories: ['Paneles', 'Instalaciones'], projectSlug: 'colegio-agustinos-recoletos'},
+  { id: 37, src: agustino2, alt: 'San Agustino colegio Suba - Paneles solares', categories: ['Paneles', 'Instalaciones'], projectSlug: 'colegio-agustinos-recoletos'},
   { id: 38, src: image27, alt: 'Caldera', categories: ['Calderas'] },
   { id: 39, src: image28, alt: 'Caldera', categories: ['Calderas'] },
 ]
